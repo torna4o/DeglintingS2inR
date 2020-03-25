@@ -14,12 +14,14 @@ To satisfy the need to deglint satellite images, open-source scripts are extreme
 
 In main steps it can be summarized as in the following line:
 
-Initiation (package loading and file loadings) 
+
+*-> Initiation (package loading and file loadings) 
 *-> Projecting GeoTIFF and shapefiles onto the same projection 
 *-> Cropping the GeoTIFF for both ROI for deglinting and sample region for Hedley's deglinting method 
 *-> Generating the linear models for Band 2,3, and 4 of Sentinel 2-MSI and storing relevant data 
 *-> Deglinting the corresponding bands (and optionally setting their minimum to 0) 
 *-> Writing it to a new GeoTIFF raster file
+
 
 Adding new bands for deglinting is trivial, will just require copying of linear model and deglinting calculation parts for the new band, and adapting it to another satellite, such as Landsat 8-OLI merely requires changing the band names.
 Some enhancements to the code may be parallel computing and other utilities like expected run time calculation according to the number of pixels and bands. 
